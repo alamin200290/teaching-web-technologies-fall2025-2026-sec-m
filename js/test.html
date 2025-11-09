@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+        <h1 id="head">JS Example</h1>
+        <input type="text" id="username" name="username" value="" />
+        <input type="button" name="click" value="Click" onclick="test()" />
+        <p id="uError"></p>
+        <script>
+            //name = "alamin";
+            //var name = "alamin";
+
+            let name = "alamin";
+            //const name = "alamin";
+            let std =[1, 'alamin', 3.5];
+
+            // if(){
+
+            // }else if(){
+                
+            // }else{
+
+            // }
+
+            // for(let a=0; a<10; a++){
+
+            // }
+
+            // if("10" === 10){
+            //     true;
+            // }else{
+            //     false;
+            // }
+
+            // function xyz(abc, b){
+            //     let c = abc(10, b);
+            //     return c;
+            // }
+
+            // let abc = function(a, b){
+            //     let c = a+b;
+            //     return c;
+            // }
+            // let d = xyz(abc, 10);
+
+            // let pqr = (a, b)=>a+b;
+            // let x= pqr(10, 20);
+
+            //console.log('test');
+            //alert('test');
+            //document.write("Test JS script");
+
+            function change(){
+                let head = document.getElementsByTagName('h1')[0];
+                //alert(head.innerHTML);
+                if(head.innerHTML == "JS Example"){
+                    head.innerHTML = "Something else...";
+                }else if(head.innerHTML == "Something else..."){
+                    head.innerHTML = "JS Example";
+                }
+            }
+
+            function test(){
+                let uError = document.getElementById('uError');
+                let username = document.getElementById('username').value;
+                if(username == ""){
+                    uError.innerHTML = "please type username first!";
+                    uError.style.color = "red";
+                }else{
+                    document.getElementById('head').innerHTML = username;
+                    uError.innerHTML = "";
+                }
+            }
+        </script>
+</body>
+</html>
