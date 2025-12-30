@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../models/userModel.php');
     //print_r($_POST);
     //var_dump($_GET);
     //echo 
@@ -14,9 +15,9 @@
             echo "null submission!";
         }else{
 
-            if($username == $_SESSION['user']['username'] && $password == $_SESSION['user']['password']){
-                //echo "valid user!";
-                //$_SESSION['status'] = true;
+            $user = ['username'=> $username, 'password'=>$password];
+            $status = login($user);
+            if($status){
                 setcookie('status', 'true', time()+3000, '/');
                 $_SESSION['username'] = $username;
                 header('location: ../views/home.php');
